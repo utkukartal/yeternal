@@ -10,12 +10,15 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
     Movement movementScript;
 
+    bool isTransitioning = false;
+
     void Start() {
         audioSource = GetComponent<AudioSource>();
         movementScript = GetComponent<Movement>();
     }
 
     void OnCollisionEnter(Collision other) {
+        if(isTransitioning) { return; }
         switch (other.gameObject.tag) {
             case "Friendly":
                 Debug.Log("You hit friendly!");
@@ -30,25 +33,19 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void StartSuccessSequence() {
-        if(movementScript.enabled) {
-            audioSource.Stop();
-        };
+        isTransitioning = true;
         // add SFX and visiuals
-        if(! audioSource.isPlaying) {
-            audioSource.PlayOneShot(successSound);
-        }
+        audioSource.Stop();
+        audioSource.PlayOneShot(successSound);
         movementScript.enabled = false;
         Invoke("LoadNextLevel", loadDelay);
     }
 
     void StartCrashSequence() {
-        if(movementScript.enabled) {
-            audioSource.Stop();
-        };
+        isTransitioning = true;
         // add SFX and visiuals
-        if(! audioSource.isPlaying) {
-            audioSource.PlayOneShot(crashSound);
-        }
+        audioSource.Stop();
+        audioSource.PlayOneShot(crashSound);
         movementScript.enabled = false;
         Invoke("ReloadLevel", loadDelay);
     }
