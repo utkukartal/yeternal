@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine; // MonoBehaviour is from this namespace 
 
 public class Movement : MonoBehaviour // Our class Movement inherits some stuff from MonoBehaviour, which is a class itself
 {
-    Rigidbody rigidBody; // A variable named rigidBody, with the type Rigidbody
-    AudioSource audioSource;
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] float zThrust = 250f;
+    [SerializeField] AudioClip mainEngine;
+    
+    Rigidbody rigidBody; // A variable named rigidBody, with the type Rigidbody
+    public AudioSource audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>(); // Here we are cashing a reference to the component
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         ProcessThrust();
@@ -26,14 +24,12 @@ public class Movement : MonoBehaviour // Our class Movement inherits some stuff 
     void ProcessThrust() {
         if(Input.GetKey(KeyCode.Space)) {
             if(! audioSource.isPlaying) {
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
             };
             rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime); // Relative to force to the elements coordinates, so up will be elements up not just increase y position.
             // Vector3 is 3 diff values for coordinates, its both direction and magnitude. .up is pretty much sayin (0,1,0)
         }else {
-            if(audioSource.isPlaying) {
-                audioSource.Stop();
-            };
+            audioSource.Stop();
         };
     }
     
