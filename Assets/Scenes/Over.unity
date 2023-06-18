@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &483000890 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2401726814881684719, guid: 6edb913e26db74844920484910b9379c, type: 3}
+  m_PrefabInstance: {fileID: 7166194016420689432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.5, z: -24.31}
+  m_LocalPosition: {x: 0, y: 9.5, z: -24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -479,6 +484,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 249297877, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: sideThruster
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ec3a50fb2132184b917178dad3ddb6a, type: 3}
+    - target: {fileID: 249297877, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: mainEngineClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ebc9630087114a4dbd7a9eb415dfa23, type: 3}
+    - target: {fileID: 249297877, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: sideThrusterClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ec3a50fb2132184b917178dad3ddb6a, type: 3}
+    - target: {fileID: 249297878, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172651896, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: crashParticle
+      value: 
+      objectReference: {fileID: 7166194016420689433}
+    - target: {fileID: 1172651896, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: successParticle
+      value: 
+      objectReference: {fileID: 483000890}
+    - target: {fileID: 1236698716522152906, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7166194016309373380, guid: 6edb913e26db74844920484910b9379c, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -493,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7166194016309373432, guid: 6edb913e26db74844920484910b9379c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7166194016309373432, guid: 6edb913e26db74844920484910b9379c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -527,8 +560,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7166194016420689434, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166194016420689434, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166194016420689434, guid: 6edb913e26db74844920484910b9379c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6edb913e26db74844920484910b9379c, type: 3}
+--- !u!198 &7166194016420689433 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 709425171813453774, guid: 6edb913e26db74844920484910b9379c, type: 3}
+  m_PrefabInstance: {fileID: 7166194016420689432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8755892462154557163
 PrefabInstance:
   m_ObjectHideFlags: 0
